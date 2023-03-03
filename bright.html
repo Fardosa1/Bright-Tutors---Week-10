@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="tutors.css">
+	</head>
+	<title>Bright Tutor</title>
+	<img src="bt.jpeg" alt="tutor image">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	<!-- This aboive protion of the code has a link to external libraries where there are custom
+		javascript codes written. They applt styles and features that are pre desighned!
+		and simplis the process for me when working with my webpage!
+	-->
+	<!-- JavaScript -->
+	<script>
+	$(document).ready(function(){
+		// Add new row to table on form submission
+		$('#add-form').submit(function(event){
+			event.preventDefault(); // Prevent page refresh
+			var name = $('#name').val(); // Get name input value
+			var subject = $('#subject').val(); // Get subject input value
+			var newRow = '<tr><td>'+name+'</td><td>'+subject+'</td></tr>'; // Create new table row
+			$('#tutor-table tbody').append(newRow); // Append row to table body
+			$('#add-form')[0].reset(); // Reset form inputs
+		});
+	});
+	// This portion of the code adds a new row to the table when the user submits something@
+	// The ID add-form uses the $ selector and attaches an event listner to the forms submit
+	// using the submit(). When the form is submitted the function prevents the default
+	// behavior of refreshing the webpage by calling "event.preventDefault"
+	// Then an HTML table row element retreives values. 
+	// Last the function resets the form inports using the reset() method which clears the input values and
+	//resets them to default status 
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Bright Tutor's</h1>
+		<table id="tutor-table" class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Subject</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> Salma Salman</td>
+					<td>Science</td>
+				</tr>
+				<tr>
+					<td>Edil Eman </td>
+					<td>English</td>
+				</tr>
+                <tr>
+					<td> Huda Haaji</td>
+					<td>History</td>
+				</tr>
+                <tr>
+					<td>Warda Warsame</td>
+					<td>Writing</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- This portion of the code defines the HTML structure of the table
+		with the id tutor-table. There are two colums "name" and subject. 
+	in the head using the thead and th elements. each row in table defined by td.
+This table displays a list of subjects and the tutor names what they teach. So this list is 
+already on the table using the javascript unction from earlier. The class atttricute of the file is
+used to apple some default styles from the bootstrap css library and this gives us aclean table
+desighn-->
+		<h1>Join The Tutor Team Today!</h1>
+		<form id="add-form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" id="name" required>
+			</div>
+			<div class="form-group">
+				<label for="subject">Subject:</label>
+				<input type="text" class="form-control" id="subject" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Add Tutor</button>
+		</form>
+	</div>
+</body>
+</html>
+ <!-- This last portion fo the ode ususes HTML to allow thr user to add a new tutor
+to the table, there is a form with two input feilds and their labels
+and there is a submit button as well using the class btn btn-primary. The button 
+triggers the javascript function and it adds a new row with table values
+entered in the form. Then the form is wrapped the in div element with the class
+container, which is another bootstrap class that centers the form on the webpage
+and styles it! The End :) -->
